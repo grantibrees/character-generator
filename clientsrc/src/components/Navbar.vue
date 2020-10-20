@@ -16,20 +16,61 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item" :class="{ active: $route.name == 'home' }">
-          <router-link :to="{ name: 'home' }" class="nav-link"
-            >Home</router-link
+        <li class="nav-item" :class="{ active: $route.name == 'charactergen' }">
+          <router-link :to="{ name: 'charactergen' }" class="nav-link"
+            >Character Generator</router-link
+          >
+        </li>
+        <li class="nav-item" :class="{ active: $route.name == 'cultures' }">
+          <router-link :to="{ name: 'cultures' }" class="nav-link"
+            >Cultures</router-link
+          >
+        </li>
+        <!-- <li
+          class="nav-item"
+          v-if="$auth.isAuthenticated"
+          :class="{ active: $route.name == 'mycharacters' }"
+        >
+          <router-link class="nav-link" :to="{ name: 'mycharacters' }"
+            >My Characters</router-link
           >
         </li>
         <li
           class="nav-item"
           v-if="$auth.isAuthenticated"
-          :class="{ active: $route.name == 'boards' }"
+          :class="{ active: $route.name == 'species' }"
         >
-          <router-link class="nav-link" :to="{ name: 'boards' }"
-            >My-Dashboard</router-link
+          <router-link class="nav-link" :to="{ name: 'species' }"
+            >Species</router-link
           >
         </li>
+        <li
+          class="nav-item"
+          v-if="$auth.isAuthenticated"
+          :class="{ active: $route.name == 'languages' }"
+        >
+          <router-link class="nav-link" :to="{ name: 'languages' }"
+            >Languages</router-link
+          >
+        </li>
+        <li
+          class="nav-item"
+          v-if="$auth.isAuthenticated"
+          :class="{ active: $route.name == 'religions' }"
+        >
+          <router-link class="nav-link" :to="{ name: 'religions' }"
+            >Religions</router-link
+          >
+        </li> -->
+        <!-- <li
+          class="nav-item"
+          v-if="$auth.isAuthenticated"
+          :class="{ active: $route.name == 'sliders' }"
+        >
+          <router-link class="nav-link" :to="{ name: 'sliders' }"
+            >Sliders</router-link
+          >
+        </li> -->
       </ul>
       <span class="navbar-text">
         <button
@@ -57,9 +98,9 @@ export default {
       console.log(this.$auth.user);
     },
     async logout() {
-      await this.$auth.logout({returnTo: window.location.origin});
-    }
-  }
+      await this.$auth.logout({ returnTo: window.location.origin });
+    },
+  },
 };
 </script>
 

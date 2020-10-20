@@ -16,12 +16,12 @@ export default {
       this.$store.dispatch("setBearer", this.$auth.bearer);
       this.$store.dispatch("getProfile");
     } catch (err) {
-      this.$router.push({ name: "home" });
+      this.$router.push({ name: "charactergen" });
     }
   },
   components: {
-    Navbar
-  }
+    Navbar,
+  },
 };
 </script>
 

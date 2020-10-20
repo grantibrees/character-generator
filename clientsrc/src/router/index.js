@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../views/Home.vue'
-import Boards from '../views/Boards.vue'
-import Board from '../views/Board.vue'
+// @ts-ignore
+import CharacterGen from '../views/CharacterGen.vue'
+// @ts-ignore
+import Cultures from '../views/Cultures.vue'
+// @ts-ignore
 import { authGuard } from "@bcwdev/auth0-vue"
 
 Vue.use(Router)
@@ -11,45 +13,44 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/charactergen',
       name: 'charactergen',
       component: CharacterGen,
-    },
-    {
-      path: '/mycharacters',
-      name: 'mycharacters',
-      component: MyCharacters,
-      beforeEnter: authGuard
     },
     {
       path: '/cultures',
       name: 'cultures',
       component: Cultures,
     },
-    {
-      path: '/species',
-      name: 'species',
-      component: Species,
-    },
-    {
-      path: '/languages',
-      name: 'languages',
-      component: Languages,
-    },
-    {
-      path: '/religions',
-      name: 'relgions',
-      component: Religions,
-    },
-    {
-      path: '/sliders',
-      name: 'sliders',
-      component: Sliders,
-    },
+    // {
+    //   path: '/mycharacters',
+    //   name: 'mycharacters',
+    //   component: MyCharacters,
+    //   beforeEnter: authGuard
+    // },
+    // {
+    //   path: '/species',
+    //   name: 'species',
+    //   component: Species,
+    //   beforeEnter: authGuard
+    // },
+    // {
+    //   path: '/languages',
+    //   name: 'languages',
+    //   component: Languages,
+    //   beforeEnter: authGuard
+    // },
+    // {
+    //   path: '/religions',
+    //   name: 'relgions',
+    //   component: Religions,
+    //   beforeEnter: authGuard
+    // },
+    // {
+    //   path: '/sliders',
+    //   name: 'sliders',
+    //   component: Sliders,
+    //   beforeEnter: authGuard
+    // },
     {
       path: "*",
       redirect: '/'
