@@ -10,15 +10,15 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: {},
-    boards: [],
-    activeBoard: {}
+    cultures: [],
+    activeCulture: {}
   },
   mutations: {
     setUser(state, user) {
       state.user = user
     },
-    setBoards(state, boards) {
-      state.boards = boards
+    setCultures(state, cultures) {
+      state.cultures = cultures
     }
   },
   actions: {
@@ -41,16 +41,16 @@ export default new Vuex.Store({
 
 
     //#region -- BOARDS --
-    getBoards({ commit, dispatch }) {
-      api.get('boards')
+    getCultures({ commit, dispatch }) {
+      api.get('cultures')
         .then(res => {
-          commit('setBoards', res.data)
+          commit('setCultures', res.data)
         })
     },
-    addBoard({ commit, dispatch }, boardData) {
-      api.post('boards', boardData)
-        .then(serverBoard => {
-          dispatch('getBoards')
+    addCulture({ commit, dispatch }, cultureData) {
+      api.post('cultures', cultureData)
+        .then(serverCulture => {
+          dispatch('getCultures')
         })
     }
     //#endregion
