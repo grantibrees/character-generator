@@ -41,18 +41,7 @@ export default new Vuex.Store({
 
 
     //#region -- BOARDS --
-    getCultures({ commit, dispatch }) {
-      api.get('cultures')
-        .then(res => {
-          commit('setCultures', res.data)
-        })
-    },
-    addCulture({ commit, dispatch }, cultureData) {
-      api.post('cultures', cultureData)
-        .then(serverCulture => {
-          dispatch('getCultures')
-        })
-    }
+
     //#endregion
 
 
