@@ -8,7 +8,7 @@ export default {
     "refData",
   ] /* More like a parameter than anything. Gets passed to Pages. On the page will look like :carData="car" or "carData="{keys: values} */,
   data() {
-    /* Data binding. */
+    /* Data binding */
     return {};
   },
   mounted() {} /* Runs functions on startup */,
